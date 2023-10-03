@@ -81,3 +81,25 @@
 <h5>@RequestBody 요청: JSON 요청 -> HTTP 메시지 컨버터 -> 객체</h5>
 <h5>@ResponseBody 응답: 객체 -> Http 메시지 컨버터 -> JSON </h5>
 <br>
+
+<h4>●HTTP 응답 </h4>
+<h5>정적 리소스: 브라우저에 정적인 HTML, css, js를 제공할 때</h5>
+<h5>뷰 템플릿 사용: 웹 브라우저에 동적인 HTML을 제공할 때</h5>
+<h5>Http 메시지 사용: HTTP API를 제공하는 경우 </h5>
+<br>
+<h4>정적 리소스</h4>
+<h5>스프링 부트가 "src/main/resources/static" 디렉토리에 있는 정적 리소스 제공 </h5>
+<h5>해당 파일 변경 없이 그대로 서비스 </h5>
+<br>
+<h4>뷰 템플릿</h4>
+<h5>뷰 템플릿 경로: "src/main/resources/templates" </h5>
+<h5>뷰 템플릿을 거쳐서 HTML이 생성되고, 뷰가 응답을 만들어서 전달 </h5>
+<h5>String을 반환하는 경우: @ResponseBody 가 없으면 뷰 리졸버가 실행되어서 뷰를 찾고, 렌더링</h5>
+<h5>View or Http 메시지: @ResponseBody 가 있으면 뷰 리졸버를 실행하지 않고, HTTP 메시지 바디에 직접 입력.</h5>
+<br>
+<h4>HTTP API, 메시지 바디 직접 입력</h4>
+<h5>정적 리소스나 뷰 템플릿을 거치지 않고, 직접 HTTP 응답 메시지를 전달하는 경우</h5>
+<h5>@ResponseStatus 애노테이션을 사용하여 응답 코드 설정 가능 </h5>
+<h5>동적으로 변경 시 ResponseEntity를 사용 </h5>
+<br>
+<h4>@RestController : @ResponseBody + @Controller 로서 Rest API를 만들 때 주로 사용 </h4>
