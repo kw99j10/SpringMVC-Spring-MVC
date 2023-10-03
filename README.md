@@ -55,3 +55,29 @@
 <h5>파라미터를 바인딩 받을 객체 필요 </h5>
 <h5>작동 원리: 객체를 생성 후 해당 객체의 프로퍼티의 setter를 호출하여 파라미터의 값을 입력(바인딩) </h5>
 <h5>단순 타입과 argument resolver로 지정한 타입들을 외하고 애노테이션 생략 가능 </h5>
+<br>
+<h4>●HTTP 요청 메시지 - 단순 텍스트 </h4>
+<h5>메시지 바디에 데이터를 직접 꺼냄 - API 통신 시 주로 사용(JSON, XML, TEXT) </h5>
+<h5>@RequestParam과 @ModelAttribute 사용할 수 없음  </h5>
+<h5>HttpEntoty: 메시지 바디 정보를 직접 조회 & 요청 파라미터 조회 기능과 관계 X </h5>
+<h5>응답에도 사용 가능</h5>
+<h5>헤더 정보 포함 가능</h5>
+<h5> view를 조회하지 않음(뷰 리졸버 실행 X) </h5>
+<h5>HttpEntity를 상속받는 객체: RequestEntity, ResponseEntity </h5>
+<br>
+<h4>@RequestBody</h4>
+<h5>HTTP 메시지 바디 정보를 편리하게 조회</h5>
+<h5>요청 파라미터 vs HTTP 메시지 바디</h5>
+<h6>요청 파라미터를 조회하는 기능: @RequestParam, @ModelAttribute</h6>
+<h6>Http 메시지 바디를 직접 조회하는 기능: @RequestBody</h6>
+<br>
+<h4>@ResponseBody</h4>
+<h5>응답 결과를 HTTP 메시지 바디에 직접 담아서 전달/h5>
+<h5> view를 조회하지 않음(뷰 리졸버 실행 X) </h5>
+<br>
+<h4>●HTTP 요청 메시지 - JSON </h4>
+<h5>@RequestBody에 직접 만든 객체 지정 가능 </h5>
+<h5>@RequestBody는 생략할 수 없음 -> 생략 시 @ModelAttribute가 적용 (위 규칙에 의해) </h5>
+<h5>@RequestBody 요청: JSON 요청 -> HTTP 메시지 컨버터 -> 객체</h5>
+<h5>@ResponseBody 응답: 객체 -> Http 메시지 컨버터 -> JSON </h5>
+<br>
