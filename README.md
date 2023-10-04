@@ -131,10 +131,12 @@
 <h4>●ReturnValueHandler</h4>
 <h5>응답 값을 변환하고 처리 (응답 데이터를 HTTP 메시지에 입력) </h5>
 <br>
-<h4>HTTP 메시지 컨버터의 위치 </h4>
+<h4>●HTTP 메시지 컨버터의 위치 </h4>
 <h5>요청의 경우: @RequestBody 와 HttpEntity를 각각 처리하는 ArgumentResolver가 존재</h5>
 <h5>응답의 경우: @ResponseBody 와 HttpEntity를 각각 처리하는 ReturnValueHandler가 존재</h5>
 <h5>만약 ArgumentResolver와 ReturnValueHandler가 처리할 수 없다면 HTTP 메시지 컨버터를 호출</h5>
-<h5>동작 과정: RequestMapping 핸들러 어댑터 -> ArgumentResolver (-->HTTP 메시지 컨버터) </h5>
+<br>
+<h5>동작 과정</h5>
+<h5>RequestMapping 핸들러 어댑터 -> ArgumentResolver (-->HTTP 메시지 컨버터) </h5>
 <h5> -> 핸들러 -> ReturnValueHandler(-->HTTP 메시지 컨버터) -> RequestMapping 핸들러 어댑터 </h5>
 <hr>
