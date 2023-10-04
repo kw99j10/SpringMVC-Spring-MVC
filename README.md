@@ -103,3 +103,30 @@
 <h5>동적으로 변경 시 ResponseEntity를 사용 </h5>
 <br>
 <h4>@RestController : @ResponseBody + @Controller 로서 Rest API를 만들 때 주로 사용 </h4>
+<br>
+
+<h4>●HTTP 메시지 컨버터</h4>
+<h5>@ResponseBody 사용 시 HTTP의 BODY에 문자 내용을 직접 반환</h5>
+<h5>뷰 리졸버 대신에 HTTP 메시지 컨버터가 동작하여 문자, 객체, byte 등을 처리 </h5>
+<br>
+<h5>●HTTP 메시지 컨버터를 적용하는 경우 </h5>
+<h6>HTTP 요청: @RequestBody, HttpEntity(RequestEntity)</h6>
+<h6>HTTP 응답: @ResponseBody, HttpEntity(ResponseEntity)</h6>
+<br>
+<h5>●스프링 부트 기본 메시지 컨버터 </h5>
+<h5>우선순위 </h5>
+<h6>0. ByteArrayHttpMessageConverter - 클래스 타입: byte[], 미디어 타입: */* </h6>
+<h6>1. StringHttpMessageConverter - 클래스 타입: String, 미디어 타입: */* </h6>
+<h6>2. MappingJackson2HttpMessageConverter - 클래스 타입: 객체 or hashMap, 미디어 타입: application/json </h6>
+<h5>HTTP 요청 데이터 읽기</h5>
+<h6>요청 시 클래스 타입과 미디어 타입(content-type)을 만족하면 read()를 호출하여 객체 생성 & 반환 </h6>
+<h5>HTTP 응답 데이터 생성</h5>
+<h6>응답 시 클래스 타입과 미디어 타입(accept)을 만족하면 write()를 호출하여 HTTP 응답 메시지 바디에 데이터를 생성</h6>
+<br>
+<h4>●Argument Resolver</h4>
+<h5>컨트롤러의 파라미터, 애노테이션 정보를 기반으로 전달 데이터 생성 </h5>
+<h5>supportsParameter()를 호출해서 해당 파라미터를 지원하는지 체크 </h5>
+<h5>지원하면 resolveArgument()를 호출해서 실체 객체 생성 -> 컨트롤러 호출</h5>
+<br>
+<h4>●ReturnValueHandler</h4>
+<h5>응답 값을 변환하고 처리 (응답 데이터를 HTTP 메시지에 입력) </h5>
