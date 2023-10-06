@@ -183,3 +183,14 @@
 <br>
 <h5>속성 변경: th:value="${...}"</h5>
 <h6>프로퍼티 접근 법으로 출력 & value 속성을 th:value 속성으로 변경 </h6>
+<br>
+<h5>속성 변경: th:action</h5>
+<h6>action에 값이 없으면 같은(현재) url을 사용함을 의미 </h6>
+<br>
+<h5>@ModelAttribute</h5>
+<h6>요청 파라미터의 갑승ㄹ 프로퍼티 접근법으로 입력</h6>
+<h6>model 객체를 자동으로 생성 및 추가</h6>
+<br>
+<h5>리다이렉트</h5>
+<h6>새로고침 시 마지막에 한 행위를 반복하므로 PRG를 이용 </h6>
+<h6>RedirectAttributes를 이용하여 메시지 및 URL 인코딩 기능 추가</h6>
